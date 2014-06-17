@@ -1,12 +1,13 @@
 angular.module('portfolio', [
   'ngResource',
-  'ui.router'
+  'ui.router',
+  'templates'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
      .state('/', {
-       url: "/",
-       templateUrl: "home.html"
+       url: '/',
+       templateUrl: "index.html"
      });
 })
 ;
