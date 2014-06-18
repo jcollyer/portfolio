@@ -1,6 +1,7 @@
 <h1>jobs</h1>
-<div ng-controller="jobs">
-  {{id}}
-  {{title}}
-  {{url}}
+<div ng-repeat="job in jobs">
+  {{job.id}}
+  {{job.title}}
+  {{job.url}}
 </div>
+

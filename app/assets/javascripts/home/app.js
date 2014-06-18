@@ -13,14 +13,13 @@ angular.module('portfolio', [
      });
 })
 .controller('JobsCtrl', function($scope, Jobs){
-  var jobs = Jobs.query(function(){
-    jobs.forEach(function(job){
-      var id = job.id;
-      var title = job.title;
-      var position = job.position;
-      var show = job.show;
-      var url = job.url;
-    });
+  var job = this;
+
+  $scope.jobs = [];
+
+  Jobs.get().$promise.then(function(res){
+    $scope.jobs = res.jobs;
   });
+
 })
 ;

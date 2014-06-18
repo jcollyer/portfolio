@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'bower'
 gem 'angular-rails-templates'
+gem 'active_model_serializers'
 group :doc do
   gem 'sdoc', require: false
 end
