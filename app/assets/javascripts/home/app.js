@@ -2,12 +2,13 @@ angular.module('portfolio', [
   'ngResource',
   'ui.router',
   'templates',
-  'models.jobs'
+  'models.jobs',
+  'jobs.list'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-     .state('/', {
-        url: '/',
+     .state('home', {
+        url: '/home',
         templateUrl: "jobs.html",
         controller: 'JobsCtrl as jobs'
      });
