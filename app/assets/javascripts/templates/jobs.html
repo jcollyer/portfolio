@@ -1,8 +1,8 @@
 <h1>jobs</h1>
 <div ng-repeat="job in jobs">
-  {{job.id}}
+  <a ng-href="#/jobs/{{job.id}}">{{job.id}}</a>
   {{job.title}}
   {{job.url}}
 </div>
 
-<div ui-view></div>
+<div ui-view style="background:#ddd;"></div>

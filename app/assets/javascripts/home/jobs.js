@@ -7,8 +7,8 @@ angular.module('portfolio', [
 ])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-     .state('home', {
-        url: '/home',
+     .state('jobs', {
+        url: '/jobs',
         templateUrl: "jobs.html",
         controller: 'JobsCtrl as jobs'
      });
