@@ -1,0 +1,21 @@
+<table class="table jobtable">
+  <tr>
+    <td><h3>Details for {{job.title}}</h3></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>job Title</td>
+    <td>{{job.title}}</td>
+  </tr>
+  <tr>
+    <td>position</td>
+    <td>{{job.position}}</td>
+  </tr>
+  <tr>
+    <td>url</td>
+    <td>{{job.url}}</td>
+  </tr>
+</table>
+<div>
+  <a class="btn btn-primary" ui-sref="editJob({id:job._id})">Edit</a>
+</div>

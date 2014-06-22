@@ -1,0 +1,15 @@
+<a ui-sref="newJob" class="btn-primary btn-lg nodecoration">Add New Job</a>
+
+<table class="table jobtable">
+  <tr>
+    <td><h3>All Jobs</h3></td>
+    <td></td>
+  </tr>
+  <tr ng-repeat="job in jobs">
+    <td>{{job.title}} - {{job.url}}</td>
+    <td>
+      <a class="btn btn-primary" ui-sref="viewJob({id:job._id})">View</a>
+      <a class="btn btn-danger"  ng-click="deleteJob(job)">Delete</a>
+    </td>
+  </tr>
+</table>
