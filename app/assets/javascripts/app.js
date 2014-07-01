@@ -2,7 +2,7 @@ angular.module('portfolio', [
   'ngResource',
   'ui.router',
   'templates',
-  'models.jobs'
+  'models.job'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -26,14 +26,54 @@ angular.module('portfolio', [
     $urlRouterProvider.otherwise('/');
 })
 
-.controller('JobListController', function($scope, Jobs){
-  var job = this;
+.controller('JobListController', function($scope, Job, popupService){
 
-  $scope.jobs = [];
+  // $scope.jobs = [];
 
-  Jobs.get().$promise.then(function(res){
+  Job.get().$promise.then(function(res){
     $scope.jobs = res.jobs;
   });
+  // $scope.jobs = Job.query(); //fetch all jobs. Issues a GET to /api/v1/jobs
 
+  $scope.deleteJob = function(job) {
+    if (popupService.showPopup('Really delete this?')) {
+      job.$delete(function() {
+        $window.location.href = '';
+      })
+    }
+  }
+})
+.controller('JobViewController', function($scope, $stateParams, Job) {
+  thisJob = this;
+  thisId = $stateParams.id - 1;
+  // thisJob = {};
+  Job.get().$promise.then(function($scope){
+    thisJob = $scope.jobs[thisId];
+    // debugger
+
+  });
+})
+.controller('JobCreateController', function($scope, Job) {
+  $scope.job = new Job();  //create new job instance. Properties will be set via ng-model on UI
+
+  $scope.addJob = function() { //create a new job. Issues a POST to /api/v1/jobs
+    debugger
+    $scope.job.$save(function() {
+      $state.go('jobs'); // on success go back to home i.e. movies state.
+    });
+  };
+})
+.controller('JobEditController', function($scope, $state, $stateParams, Job) {
+  $scope.updateJob = function() { //Update the edited job. Issues a PUT to /api/v1/jobs/:id
+    $scope.job.$update(function() {
+      $state.go('jobs'); // on success go back to home i.e. jobs state.
+    });
+  };
+
+  $scope.loadJob = function() { //Issues a GET request to /api/v1/jobs/:id to get a job to update
+    $scope.job = Job.get({ id: $stateParams.id });
+  };
+
+  $scope.loadJob(); // Load a job which can be edited on UI
 })
 ;
