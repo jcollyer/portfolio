@@ -2,7 +2,8 @@ angular.module('portfolio', [
   'ngResource',
   'ui.router',
   'templates',
-  'models.job'
+  'models.job',
+  'directives.all'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
