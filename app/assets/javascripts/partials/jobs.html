@@ -8,7 +8,8 @@
   <tr ng-repeat="job in jobs">
     <td>{{job.title}} - {{job.url}}</td>
     <td>
-      <a class="btn btn-primary" ui-sref="viewJob({id:job.id})">View</a>
+      <a class="btn btn-primary" ui-sref="editJob({id: job.id})">Edit</a>
+      <!-- <a class="btn btn-primary" ui-sref="viewJob({id:job.id})">View</a> -->
       <a class="btn btn-danger"  ng-click="deleteJob(job)">Delete</a>
     </td>
   </tr>

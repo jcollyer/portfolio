@@ -6,6 +6,10 @@ angular.module('portfolio', [
 ])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: 'index.html'
+    })
     .state('jobs', {
       url: '/jobs',
       templateUrl: 'partials/jobs.html',
@@ -44,20 +48,19 @@ angular.module('portfolio', [
   }
 })
 .controller('JobViewController', function($scope, $stateParams, Job) {
-  thisJob = this;
+  var jobCtrl = this;
+
+  jobCtrl.jobs = [];
   thisId = $stateParams.id - 1;
   // thisJob = {};
-  Job.get().$promise.then(function($scope){
-    thisJob = $scope.jobs[thisId];
-    // debugger
-
+  Job.get().$promise.then(function(res){
+    jobCtrl.job = res.jobs[0];
   });
 })
 .controller('JobCreateController', function($scope, Job) {
   $scope.job = new Job();  //create new job instance. Properties will be set via ng-model on UI
 
   $scope.addJob = function() { //create a new job. Issues a POST to /api/v1/jobs
-    debugger
     $scope.job.$save(function() {
       $state.go('jobs'); // on success go back to home i.e. movies state.
     });
@@ -65,7 +68,8 @@ angular.module('portfolio', [
 })
 .controller('JobEditController', function($scope, $state, $stateParams, Job) {
   $scope.updateJob = function() { //Update the edited job. Issues a PUT to /api/v1/jobs/:id
-    $scope.job.$update(function() {
+    // debugger
+    $scope.job.$save(function() {
       $state.go('jobs'); // on success go back to home i.e. jobs state.
     });
   };
