@@ -1,3 +1,12 @@
+/*================================
+          Fonts
+================================*/
+/*          http://weloveiconfonts.com/     */
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
 nav{
   margin: 0px;
 }
@@ -38,23 +47,44 @@ background-size:3px 3px;
   background-size:cover;
   background-repeat:no-repeat;
   z-index:-998;
-    -webkit-animation: time 15s linear infinite;
-    animation: time 15s linear infinite;
+    -webkit-animation: time 10s linear infinite;
+    animation: time 10s linear infinite;
 }
 /*================================
           Header
 ================================*/
-.logo {
-  background-color:rgba(0,0,0,0);
-  position:fixed;
-  z-index:3;
-  text-align:center;
-  img {
-    width:56.66%;
-    margin-top:16%;
-    opacity:.4;
+
+.logo-img {
+  position: absolute;
+  width:56.66%;
+  top:30%;
+  right: 40px;
+  opacity:.4;
+}
+
+
+/*================================
+          Navigation
+================================*/
+
+.jc-nav{
+  position: absolute;
+  top: 0px;
+  left: -350px;
+  width: 400px;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  border-right: 1px solid white;
+  transition: left 500ms;
+  .list-icon{
+    position: absolute;
+    font-size: 88px;
+    top: -20px;
+    left: 359px;
+    color: white;
   }
 }
+
 
 /*================================
           Animations
