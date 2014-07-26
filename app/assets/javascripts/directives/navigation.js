@@ -1,12 +1,15 @@
 angular.module('directive.navigation',[])
-.controller('itemCtrl', function(){
-  itemCtrl = this;
+.controller('jobCtrl', function($scope, Job){
+
+  Job.get().$promise.then(function(res) {
+   $scope.jobs = res.jobs;
+  });
 })
 .directive('navigation', function(){
   return {
     restrict: 'A',
     templateUrl: 'navigation.html',
-    controller: 'itemCtrl',
+    controller: 'jobCtrl',
     link: function() {
       var button = angular.element( document.querySelector( '.list-icon' ));
       var menu = angular.element( document.querySelector( '.jc-nav' ));
