@@ -3,7 +3,8 @@ angular.module('portfolio', [
   'ui.router',
   'templates',
   'models.job',
-  'directives.all'
+  'directives.all',
+  'ng-rails-csrf'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -58,13 +59,12 @@ angular.module('portfolio', [
     jobCtrl.job = res.jobs[0];
   });
 })
-.controller('JobCreateController', function($scope, Job) {
-  $scope.job = new Job();  //create new job instance. Properties will be set via ng-model on UI
+.controller('JobCreateController', function($scope, Job, $state) {
+  $scope.job = new Job();
 
-  $scope.addJob = function() { //create a new job. Issues a POST to /api/v1/jobs
+  $scope.addJob = function() {
     $scope.job.$save().then(function() {
-      debugger;
-      $state.go('jobs'); // on success go back to home i.e. movies state.
+      $state.go('jobs');
     });
   };
 })

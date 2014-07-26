@@ -16,5 +16,6 @@
 //= require angular-resource
 //= require angular-ui-router
 //= require angular-rails-templates
+//= require ng-rails-csrf
 //= require_tree ./partials
 //= require_tree .
