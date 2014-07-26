@@ -1,6 +1,6 @@
 angular.module('models.job', [])
 .factory('Job', function($resource) {
-  return $resource('/api/v1/jobs/:id.json', {id:'@id'}, {
+  return $resource('/api/v1/jobs/:id', {id:'@id'}, {
     update: { method: 'PUT' }
   });
 })

@@ -83,6 +83,11 @@ background-size:3px 3px;
     left: 359px;
     color: white;
   }
+  .job-item{
+    &:hover{
+      background: white;
+    }
+  }
 }
 
 

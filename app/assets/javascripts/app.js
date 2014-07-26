@@ -62,7 +62,8 @@ angular.module('portfolio', [
   $scope.job = new Job();  //create new job instance. Properties will be set via ng-model on UI
 
   $scope.addJob = function() { //create a new job. Issues a POST to /api/v1/jobs
-    $scope.job.$save(function() {
+    $scope.job.$save().then(function() {
+      debugger;
       $state.go('jobs'); // on success go back to home i.e. movies state.
     });
   };
