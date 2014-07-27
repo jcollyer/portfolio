@@ -1,17 +1,22 @@
 <table class="table jobtable">
   <tr>
-    <td><h3>Details for {{jobCtrl.job.title}}</h3></td>
+    <td><h3>Details for {{job.title}}</h3></td>
     <td></td>
   </tr>
   <tr>
     <td>job Title</td>
-    <td>{{jobCtrl.job.title}}</td>
+    <td>{{job.title}}</td>
   </tr>
   <tr>
     <td>url</td>
-    <td>{{jobCtrl.job.url}}</td>
+    <td>{{job.url}}</td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>{{job.id}}</td>
   </tr>
 </table>
 <div>
-  <a class="btn btn-primary" ui-sref="editJob({id:jobCtrl.job.id})">Edit</a>
+  <a class="btn btn-primary" ui-sref="editJob({id:job.id})">Edit</a>
+  <a class="btn btn-danger"  ng-click="deleteJob()">Delete</a>
 </div>

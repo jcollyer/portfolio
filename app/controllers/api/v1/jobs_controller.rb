@@ -21,6 +21,7 @@ class Api::V1::JobsController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
+    binding.pry
     if @job.update(job_params)
       respond_to do |format|
         format.json { render :json => @job }

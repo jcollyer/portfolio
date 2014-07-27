@@ -32,33 +32,31 @@ angular.module('portfolio', [
     $urlRouterProvider.otherwise('/');
 })
 
-.controller('JobListController', function($scope, Job, popupService){
-
-  // $scope.jobs = [];
-
-  Job.get().$promise.then(function(res){
+.controller('JobListController', function($scope, $state, Job, popupService){
+  $scope.jobs = Job.get().$promise.then(function(res){
     $scope.jobs = res.jobs;
   });
-  // $scope.jobs = Job.query(); //fetch all jobs. Issues a GET to /api/v1/jobs
 
   $scope.deleteJob = function(job) {
     if (popupService.showPopup('Really delete this?')) {
-      job.$delete(function() {
+      // debugger;
+      job.$delete_job().then(function() {
         $window.location.href = '';
-      })
+      });
     }
   }
 })
-.controller('JobViewController', function($scope, $stateParams, Job) {
-  var jobCtrl = this;
 
-  jobCtrl.jobs = [];
-  thisId = $stateParams.id - 1;
-  // thisJob = {};
-  Job.get().$promise.then(function(res){
-    jobCtrl.job = res.jobs[0];
+.controller('JobViewController', function($scope, $stateParams, Job) {
+  $scope.job = Job.get().$promise.then(function(res){
+    thisId = $stateParams.id -1;
+    $scope.job = res.jobs[thisId];
   });
+
+
+  // $scope.job=Job.get({id:$stateParams.id});
 })
+
 .controller('JobCreateController', function($scope, Job, $state) {
   $scope.job = new Job();
 
@@ -68,18 +66,29 @@ angular.module('portfolio', [
     });
   };
 })
+
 .controller('JobEditController', function($scope, $state, $stateParams, Job) {
-  $scope.updateJob = function() { //Update the edited job. Issues a PUT to /api/v1/jobs/:id
-    // debugger
-    $scope.job.$save(function() {
-      $state.go('jobs'); // on success go back to home i.e. jobs state.
+  $scope.loadJob = function(){
+    $scope.job = Job.get({id:$stateParams.id});
+    // debugger;
+
+  };
+
+  $scope.loadJob();
+
+  // $scope.job = Job.get().$promise.then(function(res){
+  //   thisId = $stateParams.id -1;
+  //   $scope.job = res.jobs[thisId];
+  // });
+
+  $scope.updateJob = function(job) {
+    // debugger;
+    job.$update().then(function() {
+      // debugger;
+      $state.go('jobs');
     });
   };
 
-  $scope.loadJob = function() { //Issues a GET request to /api/v1/jobs/:id to get a job to update
-    $scope.job = Job.get({ id: $stateParams.id });
-  };
 
-  $scope.loadJob(); // Load a job which can be edited on UI
 })
 ;
