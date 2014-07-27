@@ -1,9 +1,18 @@
 <div class="jc-nav">
   <span class="list-icon fontawesome-angle-right"></span>
-  <div class="job-item" ng-repeat="job in jobs">
+  <div  class="job-item"
+        ng-repeat="job in jobs"
+        ng-mouseover="showJob(job)"
+        ng-click="clickJob()">
     <ul>
       <li>{{job.title}}</li>
       <li>{{job.url}}</li>
-      <li><img src="{{job.imge}}" /></li>
   </div>
 </div>
+ <div id="job-show">
+      <h1>{{job.title}}</h1>
+      <h3>{{job.url}}</h3>
+      <h2>{{job.position}}</h2>
+      <!-- <li><img src="{{job.imge}}" /></li> -->
+  </div>
+

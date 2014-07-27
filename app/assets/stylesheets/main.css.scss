@@ -80,7 +80,7 @@ background-size:3px 3px;
     position: absolute;
     font-size: 88px;
     top: -20px;
-    left: 359px;
+    left: 420px;
     color: white;
   }
   .job-item{
@@ -90,6 +90,12 @@ background-size:3px 3px;
   }
 }
 
+#job-show{
+  position: absolute;
+  top: 10%;
+  right: 100px;
+  width: 300px;
+}
 
 /*================================
           Jobs CRUD

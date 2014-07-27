@@ -1,15 +1,25 @@
 angular.module('directive.navigation',[])
-.controller('jobCtrl', function($scope, Job){
+.controller('navigationCtrl', function($scope, Job){
+  $scope.jobs = Job.query();
 
-  Job.get().$promise.then(function(res) {
-   $scope.jobs = res.jobs;
-  });
+  $scope.showJob = function(job){
+    $scope.job = job;
+    var showDiv = angular.element(document.querySelector( '#show-job' ));
+    showDiv.html(job.title);
+  };
+  $scope.clickJob = function(){
+    var menu = angular.element( document.querySelector( '.jc-nav' ));
+    var button = angular.element( document.querySelector( '.list-icon' ));
+    button.removeClass("fontawesome-angle-left").addClass("fontawesome-angle-right");
+    menu.css("left", "-350px");
+    opened = false
+  };
 })
 .directive('navigation', function(){
   return {
     restrict: 'A',
     templateUrl: 'navigation.html',
-    controller: 'jobCtrl',
+    controller: 'navigationCtrl',
     link: function() {
       var button = angular.element( document.querySelector( '.list-icon' ));
       var menu = angular.element( document.querySelector( '.jc-nav' ));
