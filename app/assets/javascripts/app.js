@@ -33,39 +33,53 @@ angular.module('portfolio', [
 })
 
 .controller('JobListController', function($scope, $state, Job, popupService){
-  $scope.jobs = Job.get().$promise.then(function(res){
-    $scope.jobs = res.jobs;
-  });
+  // $scope.jobs = Job.get().$promise.then(function(res){
+  //   $scope.jobs = res.jobs;
+  // });
 
+  $scope.jobs = Job.query();
   $scope.job = new Job();
-  // $scope.jobs = Job.query();
 
-  $scope.save = function() {
-    // debugger;
-    $scope.job.$save();
-    $scope.job.push($scope.job);
+  $scope.save = function(job) {
+    if ($scope.job.id) {
+      Job.update({id: $scope.job.id}, $scope.post);
+    } else {
+      $scope.job.$save().then(function(response) {
+        $scope.jobs.push(response)
+      });
+    }
+    $scope.editing = false;
     $scope.job = new Job();
   };
+  $scope.newJob    = function() {
+    $scope.job = new Job();
+    $scope.editing = false;
+  };
 
-  // $scope.save = function(post) {
-  //   if ($scope.post._id) {
-  //     Post.update({_id: $scope.post._id}, $scope.post);
-  //   } else {
-  //     $scope.post.$save().then(function(response) {
-  //       $scope.posts.push(response)
-  //     });
-  //   }
-  //   $scope.editing = false;
-  //   $scope.post = new Post();
-  // }
-
+  $scope.activePost = function(job) {
+    $scope.job = job;
+    $scope.editing = true;
+  }
   $scope.delete = function(job) {
     if (popupService.showPopup('Really delete this?')) {
       Job.delete(job);
       _.remove($scope.job, job);
     }
-  }
+  };
+
 })
+
+
+
+
+
+
+
+
+
+
+
+
 
 .controller('JobViewController', function($scope, $stateParams, Job) {
   $scope.job = Job.get().$promise.then(function(res){
