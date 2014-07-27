@@ -37,12 +37,32 @@ angular.module('portfolio', [
     $scope.jobs = res.jobs;
   });
 
-  $scope.deleteJob = function(job) {
+  $scope.job = new Job();
+  // $scope.jobs = Job.query();
+
+  $scope.save = function() {
+    // debugger;
+    $scope.job.$save();
+    $scope.job.push($scope.job);
+    $scope.job = new Job();
+  };
+
+  // $scope.save = function(post) {
+  //   if ($scope.post._id) {
+  //     Post.update({_id: $scope.post._id}, $scope.post);
+  //   } else {
+  //     $scope.post.$save().then(function(response) {
+  //       $scope.posts.push(response)
+  //     });
+  //   }
+  //   $scope.editing = false;
+  //   $scope.post = new Post();
+  // }
+
+  $scope.delete = function(job) {
     if (popupService.showPopup('Really delete this?')) {
-      // debugger;
-      job.$delete_job().then(function() {
-        $window.location.href = '';
-      });
+      Job.delete(job);
+      _.remove($scope.job, job);
     }
   }
 })

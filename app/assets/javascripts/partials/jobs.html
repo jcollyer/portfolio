@@ -1,16 +1,18 @@
-<a ui-sref="newJob" class="btn-primary btn-lg nodecoration">Add New Job</a>
-
 <table class="table jobtable">
   <tr>
     <td><h3>All Jobs</h3></td>
     <td></td>
   </tr>
   <tr ng-repeat="job in jobs">
-    <td>{{job.title}} - {{job.url}} - {{job.position}} ID: {{job.id}} </td>
-    <td>
-      <a class="btn btn-primary" ui-sref="editJob({id:job.id})">Edit</a>
-      <!-- <a class="btn btn-primary" ui-sref="viewJob({id:job.id})">View</a> -->
-      <a class="btn btn-danger"  ng-click="deleteJob(job)">Delete</a>
-    </td>
+    <td ng-click="activeJob(job)">{{job.title}} - {{job.url}} - {{job.position}} ID: {{job.id}}</td>
+    <td><button class="btn btn-danger" ng-click="delete(job)">Delete</button></td>
   </tr>
 </table>
+
+<h3 ng-if="!editing">New Job</h3>
+<h3 ng-if="editing">Edit Job</h3>
+<form ng-submit="save(job)">
+  <input ng-model="job.title">
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<button ng-if="editing" class="btn btn-success" ng-click="newJob()">New Job</button>

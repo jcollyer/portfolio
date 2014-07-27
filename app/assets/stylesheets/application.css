@@ -11,4 +11,6 @@
  *= require_self
  *= require_tree .
  */
-@import url(http://weloveiconfonts.com/api/?family=entypo|fontawesome);
+
+/*TODO very heavy call, simplify!*/
+/*@import url(http://weloveiconfonts.com/api/?family=entypo|fontawesome);*/
