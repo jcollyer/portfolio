@@ -20,7 +20,7 @@ angular.module('portfolio', [
     $urlRouterProvider.otherwise('/');
 })
 
-.controller('JobsController', function($scope, $state, Job, popupService){
+.controller('JobsController', function($scope, $state, Job, popupService, $window){
 
   $scope.jobs = Job.query();
   $scope.job = new Job();
@@ -42,8 +42,7 @@ angular.module('portfolio', [
     $scope.editing = false;
   };
 
-  $scope.activePost = function(job) {
-    debugger;
+  $scope.activeJob = function(job) {
     $scope.job = job;
     $scope.editing = true;
   };
@@ -51,7 +50,7 @@ angular.module('portfolio', [
   $scope.delete = function(job) {
     if (popupService.showPopup('Really delete this?')) {
       Job.delete(job);
-      _.remove($scope.job, job);
+      _.remove($scope.jobs, job);
     }
   };
 
