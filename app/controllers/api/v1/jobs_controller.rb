@@ -37,4 +37,8 @@ private
   def job_params
     params.require(:job).permit(:title, :show, :position, :url)
   end
+
+  def default_serializer_options
+    {root: false}
+  end
 end
