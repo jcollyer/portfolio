@@ -11,6 +11,7 @@ gem 'bower'
 gem 'angular-rails-templates'
 gem 'active_model_serializers'
 gem 'ng-rails-csrf'
+gem 'pry'
 group :doc do
   gem 'sdoc', require: false
 end
