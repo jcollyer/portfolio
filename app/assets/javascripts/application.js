@@ -17,5 +17,4 @@
 //= require angular-rails-templates
 //= require ng-rails-csrf
 //= require lodash
-//= require_tree ./partials
 //= require_tree .
