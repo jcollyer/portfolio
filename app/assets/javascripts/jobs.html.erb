@@ -1,6 +1,6 @@
 <table class="table jobtable">
   <tr ng-repeat="job in jobs">
-    <td ng-click="activeJob(job)">{{job.title}} - {{job.url}} - {{job.position}} ID: {{job.id}}</td>
+    <td ng-click="activeJob(job)">{{job.title}} - {{job.url}} - {{job.position}} <img ng-src="{{job.pictures}}" /></td>
     <td><button class="btn btn-danger" ng-click="delete(job)">Delete</button></td>
   </tr>
 </table>
@@ -8,12 +8,26 @@
 <h3 ng-if="!editing">New Job</h3>
 <h3 ng-if="editing">Edit Job</h3>
 <form ng-submit="save(job)">
-  <label for="job.title">Title</label>
-  <input ng-model="job.title">
-  <label for="job.url">url</label>
-  <input ng-model="job.url">
-  <label for="job.position">position</label>
-  <input ng-model="job.position">
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <table class="table">
+    <tr>
+      <td><label for="job.title">Title</label></td>
+      <td><input ng-model="job.title"></td>
+    </tr>
+    <tr>
+      <td><label for="job.url">url</label></td>
+      <td><input ng-model="job.url"></td>
+    </tr>
+    <tr>
+      <td><label for="job.position">position</label></td>
+      <td><input ng-model="job.position"></td>
+    </tr>
+    <tr>
+      <td><label for="job.pictures">picture</label></td>
+      <td><input type="file" ng-file-select="onFileSelect($files)" ></td>
+    </tr>
+    <tr>
+      <td><button type="submit" class="btn btn-primary">Submit</button></td>
+    </tr>
+  </table>
 </form>
 <button ng-if="editing" class="btn btn-success" ng-click="newJob()">New Job</button>

@@ -7,7 +7,7 @@ angular.module('models.job', [])
   return Job
 })
 .service('popupService',function($window){
-  this.showPopup=function(message){
+  this.showPopup = function(message){
     return $window.confirm(message);
   }
 })

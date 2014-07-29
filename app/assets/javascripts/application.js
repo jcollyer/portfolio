@@ -17,4 +17,5 @@
 //= require angular-rails-templates
 //= require ng-rails-csrf
 //= require lodash
+//= require ng-file-upload
 //= require_tree .
