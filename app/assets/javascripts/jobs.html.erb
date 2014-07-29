@@ -1,6 +1,6 @@
 <table class="table jobtable">
   <tr ng-repeat="job in jobs">
-    <td ng-click="activeJob(job)">{{job.title}} - {{job.url}} - {{job.position}} ID: {{job.id}}</td>
+    <td ng-click="activeJob(job)">{{job.title}} - {{job.url}} - {{job.position}} <img ng-src="{{job.pictures}}" /></td>
     <td><button class="btn btn-danger" ng-click="delete(job)">Delete</button></td>
   </tr>
 </table>
@@ -13,7 +13,9 @@
   <label for="job.url">url</label>
   <input ng-model="job.url">
   <label for="job.position">position</label>
-  <input ng-model="job.position">
+
+  <label for="job.pictures">picture</label>
+  <input type="file" name="" >
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <button ng-if="editing" class="btn btn-success" ng-click="newJob()">New Job</button>

@@ -27,7 +27,7 @@ angular.module('portfolio', [
 
   $scope.save = function(job) {
     if ($scope.job.id) {
-      Job.update({id: $scope.job.id}, $scope.post);
+      Job.update({id: $scope.job.id}, $scope.job);
     } else {
       $scope.job.$save().then(function(response) {
         $scope.jobs.push(response)
