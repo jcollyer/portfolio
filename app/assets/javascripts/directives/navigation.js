@@ -11,7 +11,7 @@ angular.module('directive.navigation',[])
     var menu = angular.element( document.querySelector( '.jc-nav' ));
     var button = angular.element( document.querySelector( '.list-icon' ));
     button.removeClass("fontawesome-angle-left").addClass("fontawesome-angle-right");
-    menu.css("left", "-350px");
+    menu.css("left", "-400px");
     opened = false
   };
 })
@@ -31,7 +31,7 @@ angular.module('directive.navigation',[])
           opened = true;
         } else {
           button.removeClass("fontawesome-angle-left").addClass("fontawesome-angle-right");
-          menu.css("left", "-350px");
+          menu.css("left", "-400px");
           opened = false
         }
       });

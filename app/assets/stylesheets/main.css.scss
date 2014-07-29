@@ -70,13 +70,14 @@ background-size:3px 3px;
 .jc-nav{
   position: absolute;
   top: 0px;
-  left: -350px;
+  left: -400px;
   width: 400px;
-  height: 100%;
+  height: 100vh;
   background: rgba(255,255,255,0.2);
   border-right: 1px solid white;
   transition: left 500ms;
   .list-icon{
+    cursor: pointer;
     position: absolute;
     font-size: 88px;
     top: -20px;
@@ -84,6 +85,7 @@ background-size:3px 3px;
     color: white;
   }
   .job-item{
+    cursor: pointer;
     &:hover{
       background: white;
     }
