@@ -20,7 +20,7 @@ angular.module('portfolio', [
     $urlRouterProvider.otherwise('/');
 })
 
-.controller('JobsController', function($scope, $state, Job, popupService, $window){
+.controller('JobsController', function($scope, $state, Job, popupService, $window, $http, $stateParams){
 
   $scope.jobs = Job.query();
   $scope.job = new Job();
@@ -52,6 +52,19 @@ angular.module('portfolio', [
       Job.delete(job);
       _.remove($scope.jobs, job);
     }
+  };
+
+  $scope.uploadFile = function(files) {
+    var fd = new FormData();
+    //Take the first selected file
+    fd.append("file", files[0]);
+    debugger;
+    $http.post("/api/v1/jobs/23", fd, {
+      withCredentials: true,
+      headers: {'Content-Type': undefined },
+      transformRequest: angular.identity
+    }).success( "...all right!..." ).error( "..damn!..." );
+
   };
 
 })
