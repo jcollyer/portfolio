@@ -20,5 +20,10 @@
   <%= @job.url %>
 </p>
 
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag @job.image.url(:thumb) %>
+</p>
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>
