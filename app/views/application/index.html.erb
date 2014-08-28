@@ -1,6 +1,8 @@
-<div class="day">
-  <div class="night"></div>
+<div id="main-page">
+  <div class="day">
+    <div class="night"></div>
+  </div>
+  <div class="pattern"></div>
+  <%= image_tag "logo.png", class: "logo-img" %>
+  <div id="jobs" ui-view></div> <!-- This is where our views will load -->
 </div>
-<div class="pattern"></div>
-<%= image_tag "logo.png", class: "logo-img" %>
-<div id="jobs" ui-view></div> <!-- This is where our views will load -->
