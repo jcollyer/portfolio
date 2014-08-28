@@ -15,3 +15,6 @@
 /log/*.log
 /tmp
 resources/logo.ai
+
+# Ignore s3 key
+config/initializers/s3.constance.rb
