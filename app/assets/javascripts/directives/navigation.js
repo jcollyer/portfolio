@@ -12,7 +12,7 @@ angular.module('directive.navigation',[])
     var button = angular.element( document.querySelector( '.list-icon' ));
     button.removeClass("fontawesome-angle-left").addClass("fontawesome-angle-right");
     menu.css("left", "-400px");
-    opened = false;
+    opened = false
   };
 })
 .directive('navigation', function(){
@@ -26,15 +26,13 @@ angular.module('directive.navigation',[])
       var opened = false;
       button.on('click', function(){
         if (opened === false ) {
-
-          // button.removeClass("fontawesome-angle-right").addClass("fontawesome-angle-left");
+          button.removeClass("fontawesome-angle-right").addClass("fontawesome-angle-left");
           menu.css("left", "0px");
           opened = true;
         } else {
-
-          // button.removeClass("fontawesome-angle-left").addClass("fontawesome-angle-right");
+          button.removeClass("fontawesome-angle-left").addClass("fontawesome-angle-right");
           menu.css("left", "-400px");
-          opened = false;
+          opened = false
         }
       });
     }
