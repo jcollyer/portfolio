@@ -67,38 +67,89 @@ background-size:3px 3px;
           Navigation
 ================================*/
 
-.jc-nav{
-  position: absolute;
-  top: 0px;
-  left: -400px;
-  width: 400px;
-  height: 100vh;
-  background: rgba(255,255,255,0.2);
-  border-right: 1px solid white;
-  transition: left 500ms;
+// .jc-nav{
+//   position: absolute;
+//   top: 0px;
+//   width: 400px;
+//   height: 100vh;
+//   background: rgba(255,255,255,0.2);
+//   border-right: 1px solid white;
+//   transition: left 500ms;
+//   .list-icon{
+//     cursor: pointer;
+//     position: absolute;
+//     font-size: 88px;
+//     top: -20px;
+//     left: 420px;
+//     text-shadow: 1px 17px 0px #333;
+//     color: white;
+//   }
+//   .job-item{
+//     cursor: pointer;
+//     &:hover{
+//       background: white;
+//     }
+//   }
+// }
+
+// #job-show{
+//   position: absolute;
+//   top: 10%;
+//   right: 0px;
+//   width: 60%;
+// }
+
+
+/*================================
+            PAGE
+================================*/
+#page-container {
   .list-icon{
     cursor: pointer;
     position: absolute;
     font-size: 88px;
-    top: -20px;
-    left: 420px;
-    text-shadow: 1px 17px 0px #333;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
     color: white;
   }
-  .job-item{
-    cursor: pointer;
-    &:hover{
-      background: white;
+  #page-nav{
+    #nav {
+      position: absolute;
+      ul {
+        list-style-type: none;
+        &:hover {
+          background: rgba(0,0,0,0.2);
+        }
+        li {
+        }
+      }
     }
+  }
+  #main-page {
+    width: 100%;
+    position: relative;
+    float: right;
+    z-index: 1;
   }
 }
 
-#job-show{
-  position: absolute;
-  top: 10%;
-  right: 0px;
-  width: 60%;
+#page-container {
+  position: relative;
+  width:100%;
+  #page-nav{
+    width: 0%;
+    #nav {
+      position: absolute;
+      width:100%;
+    }
+  }
+  #main-page {
+    width: 100%;
+
+  }
 }
+
 
 /*================================
           Jobs CRUD

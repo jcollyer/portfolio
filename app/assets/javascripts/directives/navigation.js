@@ -8,10 +8,10 @@ angular.module('directive.navigation',[])
     showDiv.html(job.title);
   };
   $scope.clickJob = function(){
-    var menu = angular.element( document.querySelector( '.jc-nav' ));
     var button = angular.element( document.querySelector( '.list-icon' ));
+    var mainPage = angular.element( document.querySelector( '#main-page' ));
     button.removeClass("fontawesome-angle-left").addClass("fontawesome-angle-right");
-    menu.css("left", "-400px");
+    mainPage.css("width", "100%");
     opened = false
   };
 })
@@ -22,16 +22,16 @@ angular.module('directive.navigation',[])
     controller: 'navigationCtrl',
     link: function() {
       var button = angular.element( document.querySelector( '.list-icon' ));
-      var menu = angular.element( document.querySelector( '.jc-nav' ));
+      var mainPage = angular.element( document.querySelector( '#main-page' ));
       var opened = false;
       button.on('click', function(){
         if (opened === false ) {
           button.removeClass("fontawesome-angle-right").addClass("fontawesome-angle-left");
-          menu.css("left", "0px");
+          mainPage.css("width", "65%");
           opened = true;
         } else {
           button.removeClass("fontawesome-angle-left").addClass("fontawesome-angle-right");
-          menu.css("left", "-400px");
+          mainPage.css("width", "100%");
           opened = false
         }
       });
