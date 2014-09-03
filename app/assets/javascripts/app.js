@@ -9,8 +9,7 @@ angular.module('portfolio', [
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
-      url: '/',
-      templateUrl: 'index.html'
+      url: '/'
     })
     .state('jobs', {
       url: '/jobs',
