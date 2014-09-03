@@ -8,7 +8,7 @@ angular.module('directive.navigation',[])
     showDiv.html(job.title);
   };
   $scope.clickJob = function(){
-    var button = angular.element( document.querySelector( '.list-icon' ));
+    var button = angular.element( document.querySelector( '.arrow' ));
     var mainPage = angular.element( document.querySelector( '#main-page' ));
     button.removeClass("fontawesome-angle-left").addClass("fontawesome-angle-right");
     mainPage.css("width", "100%");
@@ -21,16 +21,16 @@ angular.module('directive.navigation',[])
     templateUrl: 'navigation.html',
     controller: 'navigationCtrl',
     link: function() {
-      var button = angular.element( document.querySelector( '.list-icon' ));
+      var button = angular.element( document.querySelector( '.arrow' ));
       var mainPage = angular.element( document.querySelector( '#main-page' ));
       var opened = false;
       button.on('click', function(){
         if (opened === false ) {
-          button.removeClass("fontawesome-angle-right").addClass("fontawesome-angle-left");
+          button.removeClass("arrow-right").addClass("arrow-left");
           mainPage.css("width", "65%");
           opened = true;
         } else {
-          button.removeClass("fontawesome-angle-left").addClass("fontawesome-angle-right");
+          button.removeClass("arrow-left").addClass("arrow-right");
           mainPage.css("width", "100%");
           opened = false
         }
