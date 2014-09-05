@@ -156,20 +156,23 @@ background-size:3px 3px;
 
 
 /*================================
-      iMac, Macbook, iPhone
+        Job Showcase
 ================================*/
+.job {
+  height: 100vh;
+}
 
 .phone {
   display: inline-block;
   position: relative;
-  width: 35px;
-  height: 60px;
+  width: 50px;
+  height: 80px;
   background: #bbbbbb;
   border: 4px solid #333333;
   border-top: 12px solid #333333;
   border-bottom: 13px solid #333333;
   border-radius: 4px;
-  box-shadow: inset px 3px 0px 0.03px rgba(0,0,0,0.7);
+  box-shadow: inset px 3px 0px 0.03px rgba(0, 0, 0, 0.7);
 }
 
 .phone:before {
@@ -178,7 +181,7 @@ background-size:3px 3px;
   top: 0;
   left: 0;
   border-left: 35px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 45px solid transparent;
+  border-bottom: 54px solid transparent;
 }
 
 .phone:after {
@@ -197,22 +200,22 @@ background-size:3px 3px;
   display: inline-block;
   position: relative;
   margin-left: 10px;
-  width: 184px;
-  height: 100px;
+  width: 300px;
+  height: 180px;
   background: #bbbbbb;
-  border-bottom: 20px solid #dddddd;
+  border-bottom: 25px solid #dddddd;
   border-radius: 6px;
-  box-shadow: inset 0 0 0 6px #333333;
+  box-shadow: inset 0 0 0 12px #333333;
 }
 
 .monitor:before {
   content: "";
   position: absolute;
-  bottom: -15px;
+  bottom: -19px;
   left: 50%;
-  margin-left: -5px;
-  width: 10px;
-  height: 10px;
+  margin-left: -7px;
+  width: 13px;
+  height: 13px;
   background: #444444;
   border-radius: 50%;
 }
@@ -220,20 +223,20 @@ background-size:3px 3px;
 .monitor:after {
   content: "";
   position: absolute;
-  top: 6px;
-  left: 6px;
-  border-left: 63px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 81px solid transparent;
+  top: 12px;
+  left: 12px;
+  border-left: 114px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 150px solid transparent;
 }
 
 
 .stand {
   position: absolute;
-  bottom: -42px;
+  bottom: -53px;
   left: 50%;
-  margin-left: -21px;
-  width: 42px;
-  height:4px;
+  margin-left: -43px;
+  width: 82px;
+  height: 4px;
   background: #aaaaaa;
 }
 
@@ -242,35 +245,35 @@ background-size:3px 3px;
   position: absolute;
   bottom: 4px;
   left: 50%;
-  margin-left: -15px;
-  width: 26px;
-  border-bottom: 18px solid #bbbbbb;
-  border-left: 2px solid transparent;
-  border-right: 2px solid transparent;
+  margin-left: -31px;
+  width: 55px;
+  border-bottom: 24px solid #bbbbbb;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
 }
 
 .laptop {
   display: inline-block;
   position: relative;
   margin-left: 20px;
-  width: 114px;
-  height: 68px;
+  width: 195px;
+  height: 120px;
   background: #bbbbbb;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-top: 1px solid #dddddd;
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
-  box-shadow: inset 0 0 0 5px #333333;
+  box-shadow: inset 0 0 0 7px #333333;
 }
 
 .laptop:before {
-  content:"";
+  content: "";
   position: absolute;
   left: 50%;
-  margin-left: -70px;
+  margin-left: -105px;
   bottom: -6px;
-  width: 140px;
+  width: 210px;
   height: 5px;
   background: #d4d4d4;
   border-bottom: 2px solid #888888;
@@ -301,10 +304,10 @@ background-size:3px 3px;
 .laptop-bits:after {
   content: "";
   position: absolute;
-  top: 66px;
-  margin-left: -9px;
-  width: 20px;
-  height: 2px;
+  top: 118px;
+  margin-left: -10px;
+  width: 30px;
+  height: 3px;
   background: #999999;
 }
 
