@@ -7,7 +7,7 @@ angular.module('directive.navigation',[])
     var showDiv = angular.element(document.querySelector( '#show-job' ));
     showHtml ='<div class="job">' +
                 '<div class="title"><h1>'+job.title+'</h1></div>' +
-                '<div class="title"><h4>'+job.url+'</h4></div>' +
+                '<div class="url"><a href="http://www.gopro.com">'+job.url+'</a></div>' +
 
                 ' <div class="phone"></div> ' +
                 ' <div class="monitor"> ' +
