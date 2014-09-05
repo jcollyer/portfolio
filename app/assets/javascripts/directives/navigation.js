@@ -8,7 +8,17 @@ angular.module('directive.navigation',[])
     showHtml ='<div class="job">' +
                 '<div class="title"><h1>'+job.title+'</h1></div>' +
                 '<div class="title"><h4>'+job.url+'</h4></div>' +
-                '<img src="'+job.image+'" />' +
+
+                ' <div class="phone"></div> ' +
+                ' <div class="monitor"> ' +
+                '   <img src="'+job.image+'" /> ' +
+                '   <span class="stand"></span> ' +
+                ' </div> ' +
+                ' <div class="laptop"> ' +
+                '   <span class="laptop-bits"></span> ' +
+                ' </div> ' +
+
+
               '</div>';
     showDiv.html(showHtml);
   };
