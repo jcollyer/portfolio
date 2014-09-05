@@ -23,14 +23,17 @@ angular.module('directive.navigation',[])
     link: function() {
       var button = angular.element( document.querySelector( '.arrow' ));
       var mainPage = angular.element( document.querySelector( '#main-page' ));
+      var nav = angular.element( document.querySelector( '#nav' ));
       var opened = false;
       button.on('click', function(){
         if (opened === false ) {
           button.removeClass("arrow-right").addClass("arrow-left");
-          mainPage.css("width", "65%");
+          nav.css("width","100%");
+          mainPage.css("width", "80%");
           opened = true;
         } else {
           button.removeClass("arrow-left").addClass("arrow-right");
+          nav.css("width","70%");
           mainPage.css("width", "100%");
           opened = false
         }
