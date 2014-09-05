@@ -5,7 +5,12 @@ angular.module('directive.navigation',[])
   $scope.showJob = function(job){
     $scope.job = job;
     var showDiv = angular.element(document.querySelector( '#show-job' ));
-    showDiv.html(job.title);
+    showHtml ='<div class="job">' +
+                '<div class="title"><h1>'+job.title+'</h1></div>' +
+                '<div class="title"><h4>'+job.url+'</h4></div>' +
+                '<img src="'+job.image+'" />' +
+              '</div>';
+    showDiv.html(showHtml);
   };
   $scope.clickJob = function(){
     var button = angular.element( document.querySelector( '.arrow' ));
