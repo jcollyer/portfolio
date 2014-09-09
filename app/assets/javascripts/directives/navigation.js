@@ -25,9 +25,9 @@ angular.module('directive.navigation',[])
   $scope.clickJob = function(){
     var button = angular.element( document.querySelector( '#nav-toggle' ));
     var mainPage = angular.element( document.querySelector( '#main-page' ));
-    button.addClass("active");
+    button.removeClass("active");
     mainPage.css("width", "100%");
-    opened = false
+    opened = false;
   };
 })
 .directive('navigation', function(){
@@ -39,12 +39,12 @@ angular.module('directive.navigation',[])
       var button = angular.element( document.querySelector( '#nav-toggle' ));
       var mainPage = angular.element( document.querySelector( '#main-page' ));
       var nav = angular.element( document.querySelector( '#nav' ));
-      var opened = false;
+      opened = false;
       button.on('click', function(){
         if (opened === false ) {
           button.addClass("active");
           nav.css("width","100%");
-          mainPage.css("width", "80%");
+          mainPage.css("width", "70%");
           opened = true;
         } else {
           button.removeClass("active");
