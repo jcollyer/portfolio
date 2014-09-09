@@ -7,7 +7,7 @@ angular.module('directive.navigation',[])
     var showDiv = angular.element(document.querySelector( '#show-job' ));
     showHtml ='<div class="job">' +
                 '<div class="title"><h1>'+job.title+'</h1></div>' +
-                '<div class="url"><a href="http://www.gopro.com">'+job.url+'</a></div>' +
+                '<div class="url"><a href="'+job.url+'">'+job.url+'</a></div>' +
 
                 ' <div class="phone"></div> ' +
                 ' <div class="monitor"> ' +
@@ -23,9 +23,9 @@ angular.module('directive.navigation',[])
     showDiv.html(showHtml);
   };
   $scope.clickJob = function(){
-    var button = angular.element( document.querySelector( '.arrow' ));
+    var button = angular.element( document.querySelector( '#nav-toggle' ));
     var mainPage = angular.element( document.querySelector( '#main-page' ));
-    button.removeClass("fontawesome-angle-left").addClass("fontawesome-angle-right");
+    button.addClass("active");
     mainPage.css("width", "100%");
     opened = false
   };
@@ -36,18 +36,18 @@ angular.module('directive.navigation',[])
     templateUrl: 'navigation.html',
     controller: 'navigationCtrl',
     link: function() {
-      var button = angular.element( document.querySelector( '.arrow' ));
+      var button = angular.element( document.querySelector( '#nav-toggle' ));
       var mainPage = angular.element( document.querySelector( '#main-page' ));
       var nav = angular.element( document.querySelector( '#nav' ));
       var opened = false;
       button.on('click', function(){
         if (opened === false ) {
-          button.removeClass("arrow-right").addClass("arrow-left");
+          button.addClass("active");
           nav.css("width","100%");
           mainPage.css("width", "80%");
           opened = true;
         } else {
-          button.removeClass("arrow-left").addClass("arrow-right");
+          button.removeClass("active");
           nav.css("width","70%");
           mainPage.css("width", "100%");
           opened = false

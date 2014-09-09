@@ -3,7 +3,7 @@
 ================================*/
 body {
   margin: 0px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playball', cursive;
 }
 
 nav{
@@ -59,6 +59,17 @@ background-size:3px 3px;
   top:30%;
   right: 40px;
   opacity:.4;
+}
+
+.header-bar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background: rgba(255,255,255,0.3);
+  z-index: 9999;
+  height: 60px;
+  border-bottom: 1px solid #ccc;
 }
 
 /*================================
@@ -161,12 +172,10 @@ background-size:3px 3px;
 ================================*/
 #show-job{
   position: absolute;
-  left: 50%;
-  width: 620px;
+
 }
 .job {
   height: 100vh;
-  left: -50%;
   position: relative;
   .title {
     h1{
@@ -181,11 +190,9 @@ background-size:3px 3px;
     a {
       text-align: center;
       padding: 10px 0px;
-      color: #333;
-      background: #fff;
+      color: white;
       width: 100%;
       display: block;
-      text-decoration: none;
       &:hover {
         background: #ddd;
       }
@@ -357,6 +364,53 @@ background-size:3px 3px;
 }
 
 
+/*================================
+          Hamburger
+================================*/
 
 
 
+#nav-toggle {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.4);
+  border-right: 1px solid #ccc;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  z-index: 9;
+}
+// #nav-toggle span {
+//   margin-top: 27px;
+// }
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 7px;
+  width: 50px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+#nav-toggle span:before {
+  top: 0px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
