@@ -9,7 +9,6 @@ angular.module('directive.navigation',[])
                 '<div class="title"><h1>'+job.title+'</h1></div>' +
                 '<div class="url"><a href="'+job.url+'">'+job.url+'</a></div>' +
 
-                ' <div class="phone"></div> ' +
                 ' <div class="monitor"> ' +
                 '   <img src="'+job.image+'" /> ' +
                 '   <span class="stand"></span> ' +
@@ -17,6 +16,7 @@ angular.module('directive.navigation',[])
                 ' <div class="laptop"> ' +
                 '   <span class="laptop-bits"></span> ' +
                 ' </div> ' +
+                ' <div class="phone"></div> ' +
 
 
               '</div>';
