@@ -1,10 +1,10 @@
 /*================================
           body
 ================================*/
-$color-purple: #7a73a7;
+$color-purple: #8877a8;
 body {
   margin: 0px;
-  font-family: 'Playball', cursive;
+  font-family: 'Josefin Slab', serif;
 }
 
 nav{
@@ -84,13 +84,13 @@ nav{
 ================================*/
 #page-container {
   background: #878;
-  background: -moz-linear-gradient(top,  #878 0%, #333 97%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#878), color-stop(97%,#333));
-  background: -webkit-linear-gradient(top,  #878 0%,#333 97%);
-  background: -o-linear-gradient(top,  #878 0%,#333 97%);
-  background: -ms-linear-gradient(top,  #878 0%,#333 97%);
-  background: linear-gradient(to bottom,  #878 0%,#333 97%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#878', endColorstr='#333',GradientType=0 );
+  background: -moz-linear-gradient(top,  #878 0%, #fff 97%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#878), color-stop(97%,#fff));
+  background: -webkit-linear-gradient(top,  #878 0%,#fff 97%);
+  background: -o-linear-gradient(top,  #878 0%,#fff 97%);
+  background: -ms-linear-gradient(top,  #878 0%,#fff 97%);
+  background: linear-gradient(to bottom,  #878 0%,#fff 97%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#878', endColorstr='#fff',GradientType=0 );
 
   height: 100vh;
   #page-nav{
@@ -112,27 +112,15 @@ nav{
         }
         &:hover .bottom {
           width: 100%;
-          transition: width 0.5s;
         }
         ul {
           list-style-type: none;
-          border-bottom: 1px solid #aaa;
+          border-bottom: 1px solid #fff;
           margin: 0px;
           padding: 10px;
           cursor: pointer;
-          &:after {
-            content: "";
-            position: absolute;
-            width: 0%;
-            &:hover{
-              content: "";
-              bottom: 0px;
-              height: 1px;
-              width: 100%;
-              background: red;
-            }
-          }
           li {
+            color: white;
           }
         }
       }

@@ -4,8 +4,11 @@
         ng-mouseover="showJob(job)"
         ng-click="clickJob()">
     <ul>
-      <li>{{job.title}}</li>
-      <li>{{job.url}}</li>
+      <li>
+        <div class="job-icon"><img src="{{job.icon}}" /></div>
+        <p>{{job.title}}</p>
+      </li>
+
     </ul>
     <div class="bottom"></div>
   </div>
