@@ -7,8 +7,10 @@
       <th>Show</th>
       <th>Position</th>
       <th>Url</th>
-      <th></th>
-      <th></th>
+      <th>Icon</th>
+      <th>Desktop</th>
+      <th>Laptop</th>
+      <th>Phone</th>
       <th></th>
       <th></th>
     </tr>
@@ -21,8 +23,10 @@
         <td><%= job.show %></td>
         <td><%= job.position %></td>
         <td><%= job.url %></td>
-        <td><%= image_tag job.image.url(:thumb) %></td>
         <td><%= image_tag job.icon.url(:thumb) %></td>
+        <td><%= image_tag job.image.url(:thumb) %></td>
+        <td><%= image_tag job.lap.url(:thumb) %></td>
+        <td><%= image_tag job.phone.url(:thumb) %></td>
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>

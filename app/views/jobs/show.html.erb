@@ -20,15 +20,25 @@
   <%= @job.url %>
 </p>
 
+<p>
+  <strong>Icon:</strong>
+  <%= image_tag @job.icon.url(:thumb) %>
+</p>
 
 <p>
-  <strong>Picture:</strong>
+  <strong>Desktop:</strong>
   <%= image_tag @job.image.url(:thumb) %>
 </p>
 
 <p>
-  <strong>Picture:</strong>
-  <%= image_tag @job.icon.url(:thumb) %>
+  <strong>Laptop:</strong>
+  <%= image_tag @job.lap.url(:thumb) %>
 </p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= image_tag @job.phone.url(:thumb) %>
+</p>
+
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>

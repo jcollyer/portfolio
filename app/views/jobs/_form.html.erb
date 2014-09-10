@@ -30,14 +30,25 @@
 
 
   <div class="large-4 small-12 columns">
-    <h3><%= f.label :image %></h3>
+    <h3><%= f.label :icon %></h3>
+    <%= f.file_field :icon %>
+  </div>
+
+  <div class="large-4 small-12 columns">
+    <h3>Desktop</h3>
     <%= f.file_field :image %>
   </div>
 
   <div class="large-4 small-12 columns">
-    <h3><%= f.label :icon %></h3>
-    <%= f.file_field :icon %>
+    <h3>Laptop</h3>
+    <%= f.file_field :lap %>
   </div>
+
+  <div class="large-4 small-12 columns">
+    <h3><%= f.label :phone %></h3>
+    <%= f.file_field :phone %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
