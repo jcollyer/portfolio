@@ -14,7 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-resources/logo.ai
+resources/
 
 # Ignore s3 key
 config/initializers/s3.constance.rb

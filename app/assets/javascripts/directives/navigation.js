@@ -14,9 +14,12 @@ angular.module('directive.navigation',[])
                 '   <span class="stand"></span> ' +
                 ' </div> ' +
                 ' <div class="laptop"> ' +
+                '   <img src="'+job.lap+'" /> ' +
                 '   <span class="laptop-bits"></span> ' +
                 ' </div> ' +
-                ' <div class="phone"></div> ' +
+                ' <div class="phone"> ' +
+                '   <img src="'+job.phone+'" /> ' +
+                '</div> ' +
 
 
               '</div>';
