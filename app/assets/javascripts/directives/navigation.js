@@ -6,6 +6,7 @@ angular.module('directive.navigation',[])
     $scope.job = job;
     var showDiv = angular.element(document.querySelector( '#show-job' ));
     showHtml ='<div class="job">' +
+                '<div class="job-logo"><img src="'+job.icon+'"></div>' +
                 '<div class="title"><h1>'+job.title+'</h1></div>' +
                 '<div class="url"><a href="'+job.url+'">'+job.url+'</a></div>' +
 
@@ -47,11 +48,11 @@ angular.module('directive.navigation',[])
         if (opened === false ) {
           button.addClass("active");
           nav.css("width","100%");
-          mainPage.css("width", "70%");
+          mainPage.css("width", "85%");
           opened = true;
         } else {
           button.removeClass("active");
-          nav.css("width","70%");
+          nav.css("width","85%");
           mainPage.css("width", "100%");
           opened = false
         }
